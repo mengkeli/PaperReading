@@ -1,3 +1,18 @@
-#deep neural network on health data analysis
-#深度神经网络在医疗健康领域的应用
+deep neural network on health data analysis
+===
+深度神经网络在医疗健康领域的应用
+===
+#文献阅读
 查阅的均为英文文献，在原文引用的同时给出中文翻译。
+##1. 
+- **data source:**
+- **purpose:**develop a method of classifying cancers to specific diagnostic categories based on their gene expression signatures using artificial neural networks
+- **conclusion:**
+##2. 
+##3. 
+---
+#参考文献
+##1. Classification and diagnostic prediction of cancers using gene expression profiling and artificial neural networks
+Javed Khan1, 2, 7, Jun S. Wei1, 7, Markus Ringnér1, 3, 7, Lao H. Saal1, Marc Ladanyi4, Frank Westermann5, Frank Berthold6, Manfred Schwab5, Cristina R. Antonescu4, Carsten Peterson3 & Paul S. Meltzer1
+##2. 
+##3. 
