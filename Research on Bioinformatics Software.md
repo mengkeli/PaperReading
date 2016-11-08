@@ -1,9 +1,7 @@
 ## Research on Bioinformatics Software ##
-
+- by 李孟珂
 要求：
 研究生物信息学所需要的数据库和**工作软件**,侧重**软件功能**调研
-
-前三章为背景知识介绍，第四章为研究重点，已有相关背景的读者可略过前三章。
 
 ---
 ### 一. 简介
@@ -16,7 +14,7 @@
 - 计算机基础（linux+perl+R 或者 python+matlab）
 - 生信基础知识（测序+数据库+数据格式）
 - 生信研究领域（全基因组，全转录组，全外显子组，捕获目标区域测序）
-- 生信应用领域（肿瘤筛查，产前诊断，流行病学，个性化医疗）
+- **生信应用领域（肿瘤筛查，产前诊断，流行病学，个性化医疗）**这也是我们的研究重点
 
 ---
 ### 三. 研究方向
@@ -75,14 +73,16 @@
 
 - **ClustalW/X**
 最为著名的序列多重对齐软件包。用户可自行下载进行数据分析。接受多种输入格式，包括FASTA、EMBL、SWISS-PROT、PIR、GCG/MSF等，但所有输入序列必须在同一文件中。如果输入序列中的非空格号85%以上为A、C、G、T、U、N，判定为核酸序列，否则作为蛋白质序列计算。但核酸和蛋白质序列不能在同一文件中。
+
 - **Match-Box**
 同时考虑序列数据和氨基酸性质进行序列多重对齐分析。
 
 #### 2. 系谱分析
-临床上判断单基因病的遗传方式常用系谱分析法。系谱 (pedigree)或称家图是指对某遗传病患者家族各成员的发病情况进行详细调查，再以特定的符号和格式绘制成反映家族各成员相互关系和发病情况的图解。是遗传风险分析、连锁分析和产前诊断中必不可少的工具。 
+临床上判断单基因病的遗传方式常用系谱分析法。系谱 (pedigree)或称家图是指对某遗传病患者家族各成员的发病情况进行详细调查，再以特定的符号和格式绘制成反映家族各成员相互关系和发病情况的图解。是遗传风险分析、连锁分析和**产前诊断**中必不可少的工具。 
 
 - **PAUP**
 它包括距离矩阵、不变量和极大似然方法和许多指标和统计检验。一般被用来计算后验概率分裂和拓扑树的距离。
+
 - **GCG package**
 是一个有超过130个程序的完整软件包,可以操作和分析核酸、蛋白质序列。它具有以下功能：
     1. 比较。比较两个或多个序列。创建、编辑、显示和分析多重序列比对。
@@ -97,6 +97,7 @@
     10. 引物预测。预测最佳引物PCR（聚合酶链）反应。
     11. 蛋白质分析。识别序列在蛋白质序列和预测肽隔离。
     12. 翻译。核酸翻译成蛋白质和向后翻译蛋白质成核酸
+
 - **MEGA/METREE**
 是计算机软件进行统计分析分子进化,构建系统发育树。
 
@@ -117,23 +118,17 @@
 - **GeneMark**
 是一个在细菌的DNA序列寻找基因的系统。该算法是基于5阶非齐次马尔可夫链,它是用于定位流感嗜血杆菌的完整基因组中的基因、尿道支原体、和其他几个完整的基因组。
 这个想法是将马尔可夫链模型用于GeneMark集成到一个隐藏的马尔可夫模型框架,与编码和非编码区域之间的过渡正式解释为隐藏状态之间的转换。
-GeneMark准确的识别物种的特定参数。GenMark.hmm算法准确地基因预测的关键条件。然而,问题是,出于对病毒基因组的研究,如何定义参数基因预测在一个相当短的序列没有大型基因组上下文。在1999年提出的这个问题是发展“启发式法”计算的参数的函数序列G + C含量。自2004年以来模型建造的启发式方法已经被使用在发现基因在宏基因组序列。随后,几百名原核基因组的分析导致发展中更高级的启发式方法(2010年MetaGeneMark)中实现。
+GeneMark准确的识别物种的特定参数。GenMark.hmm算法准确地基因预测的关键条件。然而,问题是,如何在一个相当短的序列并且没有大型基因组上下文的情况下定义参数基因预测。在1999年提出的这个问题是发展“启发式法”计算的参数的函数序列G + C含量。自2004年以来模型建造的启发式方法已经被使用在发现基因在宏基因组序列。随后,几百名原核基因组的分析导致发展中更高级的启发式方法(2010年MetaGeneMark)中实现。
 在真核转录基因预测可以通过GeneMarkS-T新算法实现。
-- Veil
+
+- **Veil**
 在脊椎动物上找到基因DNA的隐马尔可夫模型
 
 - **GENEID**
-In the second step, exons are built from the sites. Exons are scored as the sum of the scores of the defining sites, plus the the log-likelihood ratio of a Markov Model for coding DNA. Finally, from the set of predicted exons, the gene structure is assembled, maximizing the sum of the scores of the assembled exons. geneid offers some type of support to integrate predictions from multiple source via external gff files and the redefinition of the general gene structure or model is also feasible. The accuracy of geneid compares favorably to that of other existing tools, but geneid is likely more efficient in terms of speed and memory usage.
-geneid是以层次结构的程序来预测匿名基因序列设计的。在第一步中,剪接位点,启动和停止密码子采用位置权重数组(PWAs)来预计和记录得分。在第二步中,外显子在网站上建立。外显子是得分的分数之和定义网站,加上的马尔可夫模型的对数似然比编码DNA。最后,从预测外显子的集合,基因结构组装,最大化组装外显子的分数的总和。geneid提供某种类型的支持我
-
-- **Genlang**
+geneid是以层次结构的程序来预测匿名基因序列设计的。geneid精度要优于其他现有的工具,但geneid可能更高效的速度和内存使用。
 
 - **Glimmer**
 是一个使用插值马尔可夫模型(IMMs)来识别微生物的DNA编码区域的系统。IMMs是马尔可夫模型的泛化,允许以极大的灵活性的选择“背景”,即：有多少之前的基组将会被用于预测下一个基组。Glimmer一直在完整基因组流感嗜血杆菌、大肠杆菌、幽门螺旋杆菌,尿道支原体和其他基因组上进行测试,结果到目前为止已经证明它是高度准确的。
-
-
-4. 基因分类
-- GO Annotator
 
 #### 6. 进化树分析
 - **Phylip**
@@ -144,34 +139,9 @@ geneid是以层次结构的程序来预测匿名基因序列设计的。在第�
     4. 把序列的每个碱基/氨基酸独立看待（碱基/氨基酸只有0和1的状态）时，对序列进行分析的软件
     5. 按照DOLLO简约性算法对序列进行分析的软件
     6. 绘制和修改进化树的软件。 
+
 - **PUZZLE**
 核酸序列、蛋白序列相似性分析及进化树构建工具。根据序列数据的最大相似性构建进化树，一个软件，并且对树进行bootstrap评估。可对大量数据进行快速分析构建，程序还包含数个统计测试。 
-
-#### 7. 其它分析工具和软件
-Putative DNA Sequencing Errors Check
-http://www.bork.embl-heidelberg.de/Frame/
-MatInspector
-http://www.gsf.de/cgi-bin/matsearch.pl
-FastM
-http://www.gsf.de/cgi-bin/fastm.pl
-Web Signal Scan
-http://www.dna.affrc.go.jp/htdocs/sigscan/signal.html
-BCM Search Launcher
-http://dot.imgen.bcm.tmc.edu:9331/seq-util/seq-util.html
-Webcutter
-http://www.firstmarket.com/cutter/cut2.html
-Translate DNA to protein
-http://www.expasy.ch/tools/dna.html
-ABIM
-http://www-biol.univ-mrs.fr/english/logligne.html
-sequence motifs:
-Pfam
-http://www.sanger.ac.uk/Pfam/
-http://pfam.wustl.edu/
-ProDom
-http://protein.toulouse.inra.fr/prodom.html
-PRINTS
-http://www.biochem.ucl.ac.uk/bsm/dbbrowser/PRINTS/
 
 ---
 ### 五. 参考文献
