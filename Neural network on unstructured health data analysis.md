@@ -5,9 +5,24 @@
 - 以及在图形、声音以及其他表型结合（包括可微神经网络DNC的应用）
 
 ---
+### 背景介绍
+---
+![unstructred vs structured data][1]
+
 
 ###文献阅读
+---
 查阅的均为英文文献，给出部分中文翻译，重要文献加粗显示。
+1. An integrated data preparation scheme for neural network data analysis
+2. 
+- **data description:**
+- **main idea:**
+- **methods:**
+
+
+
+
+
 
 1. Classification and diagnostic prediction of cancers using gene expression profiling and artificial neural networks
 - **data description:** 
@@ -54,7 +69,7 @@ Unlike a mixture of experts, these specialist models can be trained rapidly and 
 - **main idea:**
 - **methods:**
 
-7. On the number of linear regions of deep neural networks. 
+7. 
 - **data description:**
 - **main idea:**
 - **methods:**
@@ -62,35 +77,21 @@ Unlike a mixture of experts, these specialist models can be trained rapidly and 
 8. Very deep convolutional networks for large-scale image recognition.
 - **data description:**
 - **main idea:** we investigate the effect of the convolutional n
-etwork depth on its
-accuracy in the large-scale image recognition setting.  Our
-main contribution is
-a thorough evaluation of networks of increasing depth using
-an architecture with
-very small (
-3
-×
-3
-) convolution filters, which shows that a significant improve
-ment
-on the  prior-art configurations can  be  achieved by  pushing th
-e  depth to  16–19
-weight layers.
+etwork depth on its accuracy in the large-scale image recognition setting.  Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3×3) convolution filters, which shows that a significant improvement on the  prior-art configurations can  be  achieved by  pushing the  depth to  16–19 weight layers.
 本文研究了在大数据量的图像识别上，卷积网络的深度对识别准确度的影响。 主要用3×3的卷积滤波器，通过增加网络深度来对识别进行彻底的评估。
-
 - **methods:**
 
-9.
+9. A Framework for the Forensic Investigation of Unstructured Email Relationship Data
+- **data description:** 邮件
+- **main idea:** 提出了一种新颖的框架来帮助司法调查非结构化的电子邮件数据。（主要在于分析该邮件与其他邮件的交流网络）。非结构化数据更为复杂,因为它包含的信息一个社交网络,如人际关系, 识别关键的节点和权力关系, 目前没有标准化的工具来进行调查分析。
+- **methods:**  社交网络分析、数据可视化，
+
+10. A Graph-based Approach for Semantic Data Mining 基于图的语义数据挖掘
 - **data description:**
-- **main idea:**
+- **main idea:** 首先,开发一个信息集成解决方案基于metaheuristic优化时需要访问的数据挖掘任务异构数据源。其次,我描述的图形界面领域知识和数据结构可以采用RDF模型和它的图形表示。最后,我描述几个图理论分析方法挖掘相结合的信息来源。
 - **methods:**
 
-10.
-- **data description:**
-- **main idea:**
-- **methods:**
-
-11.
+11. Information Accountability of Healthcare Big Data 
 - **data description:**
 - **main idea:**
 - **methods:**
@@ -178,3 +179,9 @@ In Proc. 33nd International Conference on Machine Learning (eds Balcan, M. F. & 
 
 17. Daumé, H. III, Langford, J. & Marcu, D. Search-based structured prediction.
 Mach. Learn. 75, 297–325 (2009) 
+
+
+  [1]: 
+
+
+  [1]: images/2016-11-08-11-Firefox_Screenshot_2016-11-08T08-11-35.482Z.png "Firefox_Screenshot_2016-11-08T08-11-35.482Z.png"
