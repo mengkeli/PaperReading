@@ -14,11 +14,39 @@
 ---
 查阅的均为英文文献，给出部分中文翻译，重要文献加粗显示。
 1. An integrated data preparation scheme for neural network data analysis
-2. 
-- **data description:**
-- **main idea:**
-- **methods:**
+- **main idea:** 本文系统的提出了在神经网络训练之前的数据预处理方法
+- **data descrption:** 主要针对金融领域的数据，比如每五分钟的股票价格
+- **methods:** 1. 采用遗传算法进行特征选择，选出最有效的特征变量
+        2.分三阶段来处理非结构化数据：第一步通过语义分析来从文本中提取相关特征，然后生成一个特定事件的总结（event-specific summary）。这一步让数据可读性更强、更具有代表性。这一步里可以采用一些**字符匹配**算法。
+第二步是把第一步得到的总结数据用**分类算法**转换成相应的名词变量，例如.
+第三步是把第二步得到的变量**制成表格**(向量化？)，形成单个数据集。
 
+2. Towards developing an intelligent agent to assist in patient diagnosis using neural networks on **unstructured patient clinical notes**: Initial analysis and models 
+- **main idea:** 文本挖掘是数据挖掘的一种变体,试图从非结构化文本中提取重要的信息和知识。本研究旨在基于非结构化临床数据，确定一个自动诊断预测疾病的智能系统。
+A Multilayer FeedForward Neural Network with Back Propagation training was implemented for classification.
+训练了一个多层前馈反向传播神经网络用于分类。
+- **data description:**  SHINE OS+ EMR
+数据内容包括 complaint (TEXT), complaint history(TEXT), physical exam (TEXT) and diagnosis (TEXT)
+数据在SHINE OS+中以自由文本的形式存在，该数据库包括81516个病患记录和62261个咨询记录，从2011年1月到2015年1月。
+数据集被分为以下四组实验：
+• 哮喘 vs 支气管炎 vs 流感 vs 肺炎 vs 肺结核 vs 上呼吸道感染
+• 下呼吸道感染 vs 非上呼吸道感染
+• 下呼吸道感染 vs 非下呼吸道感染
+• 高血压 vs 非高血压
+- **methods:** : (1) Data Retrieval： The attributes include (1) complaints, (2) complaint history, (3) physical exam and (4) diagnosis. All fields used for this study were stored as text fields. The diagnosis attribute was considered as the record label.诊断属性被用作标签。
+(2) Pre-processing： The **Term Frequency-Inverse Document Frequency** (TF-IDF) was used as measure for the attributes in the vector. Some tokens were removed based on the predefined list of stopwords for English. The tokens were further filtered by accepting only those with length greater or equal to three characters. 
+(3) Processing and Analysis: Text mining techniques were applied to patient clinical text data to conduct the analysis. A Python neural network classifier was designed using functionalities from the **PyBrain package**
+(4) Classification: All datasets are tested on two hidden units schemes. The two schemes for the computation of hidden units are
+![hidden layer][2]
+- **conclusion：**  Predicting an unrelated diagnosis versus a group of similar ones yields high accuracy and low percent errors. 本论文训练的神经网络，在对于在多种不相关的病例的诊断上具有很高的精准率，在相关性高的病例上精准率明显下降。
+
+3. Automatic identification of heart failure diagnostic criteria, using text analysis of clinical notes from electronic health records.
+- **main idea:** We developed a hybrid NLP pipeline that performs two levels of analysis: (1) At the criteria mention level, a rule-based NLP system is constructed to annotate all affirmative and negative mentions of Framingham criteria. (2) At the encounter level, we construct a system to label encounters according to whether any Framingham criterion is asserted, denied, or unknown.
+本文提出了一种混合的自然语言处理方法，可以完成两层分析:(1)在。。层面，建立一个基于规则的自然语言处理系统来标注所有的积极和消极。(2)在。。层面，建立一个系统来对
+
+4. Prediction of Heart Disease using Data Mining Techniques
+- **main idea:** 分析各种可以用于预测和诊断心脏病的数据挖掘工具和技术.
+- 
 
 
 
@@ -64,11 +92,6 @@ Unlike a mixture of experts, these specialist models can be trained rapidly and 
 - **methods:** The neural network, which has 60 million parameters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully-connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolution operation. 
 该神经网络由六千万个参数和六十五万个神经元，包括五个卷积层，并连接一个最大池化层和三个全连接层。在加速训练方面，采用非饱和神经元和GPU运算。采用"dropout"方法来降低过拟合。
 
-6. Human-level control through deep reinforcement learning
-- **data description:**
-- **main idea:**
-- **methods:**
-
 7. 
 - **data description:**
 - **main idea:**
@@ -91,7 +114,7 @@ etwork depth on its accuracy in the large-scale image recognition setting.  Our 
 - **main idea:** 首先,开发一个信息集成解决方案基于metaheuristic优化时需要访问的数据挖掘任务异构数据源。其次,我描述的图形界面领域知识和数据结构可以采用RDF模型和它的图形表示。最后,我描述几个图理论分析方法挖掘相结合的信息来源。
 - **methods:**
 
-11. Information Accountability of Healthcare Big Data 
+11. 
 - **data description:**
 - **main idea:**
 - **methods:**
@@ -114,74 +137,6 @@ it does not attempt to encode a whole input sentence into a single fixed-length 
 
 - **conclusion:** 该方法在英译法的翻译中，比现有的基于短语的翻译器表现出色，尤其是在长句子的翻译上。
 
-- 
----
-###参考文献
-1. Classification and diagnostic prediction of cancers using gene expression profiling and artificial neural networks
-Javed Khan1, 2, 7, Jun S. Wei1, 7, Markus Ringnér1, 3, 7, Lao H. Saal1, Marc Ladanyi4, Frank Westermann5, Frank Berthold6, Manfred Schwab5, Cristina R. Antonescu4, Carsten Peterson3 & Paul S. Meltzer1
-
-2. Hybrid computing using a neural network with dynamic external memory
-Alex Graves,    Greg Wayne,	Malcolm Reynolds,	Tim Harley,	Ivo Danihelka,	Agnieszka Grabska Barwińska,	Sergio Gómez Colmenarejo,	Edward Grefenstette,	Tiago Ramalho,	John Agapiou,	Adrià Puigdomènech Badia,	Karl Moritz Hermann,	Yori Zwols,	Georg Ostrovski,	Adam Cain,	Helen King,	Christopher Summerfield,	Phil Blunsom,	Koray Kavukcuoglu	& Demis Hassabis
-
-3. Graves, A. Generating sequences with recurrent neural networks. Preprint at http://arxiv.org/abs/1308.0850 (2013) 
-
-4. Hinton, Geoffrey, Vinyals, Oriol, and Dean, Jeff. Distilling the knowledge in a neural network.
-arXiv preprint arXiv:1503.02531, 2015
-
-5. Krizhevsky, Alex, Sutskever, Ilya, and Hinton, Geoffrey E. 
-Imagenet classification with deep convolutional neural networks. 
-In Advances in neural information processing systems, pp. 1097–1105, 2012
- 
-6. A framework for the forensic investigation of unstructured email relationship data
-Towards a New Science of a Clinical Data Intelligence
-Adaptive Visualization of Dynamic Unstructured Meshes
-Quality of information for quality of life: Healthcare big data analytics
-Finding Structured and Unstructured \ud Features to Improve the Search Result of \ud Complex Question
-Information Accountability of Healthcare Big Data
-
-
-7. Montufar, Guido F, Pascanu, Razvan, Cho, Kyunghyun, and Bengio, Yoshua.
-On the number of linear regions of deep neural networks. 
-In Advances in neural information processing systems, pp. 2924–2932, 2014
-
-8. Simonyan, Karen and Zisserman, Andrew.
-Very deep convolutional networks for large-scale image recognition.
-arXiv preprint arXiv:1409.1556, 2014.
-
-9. Silver, David, Huang, Aja, Maddison, Chris J, Guez, Arthur, Sifre, Laurent, van den Driessche, George, Schrittwieser, Julian, Antonoglou, Ioannis, Panneershelvam, Veda, Lanctot, Marc, et al. Mastering the game of go with deep neural networks and tree search.
-Nature,529(7587):484–489, 2016.
-
-10. Deep biomarkers of human aging: Application of deep neural networks to biomarker development
-Evgeny Putin 1, 2 , Polina Mamoshina 1, 3 , Alexander Aliper 1 , Mikhail Korzinkin 1 , Alexey Moskalev 1, 4 , Alexey Kolosov 5 , Alexander Ostrovskiy 5 , Charles Cantor 6 , Jan Vijg 7 , Alex Zhavoronkov 1, 3
-
-11. Sutskever, I., Vinyals, O. & Le, Q. V.
-Sequence to sequence learning with neural networks. 
-In Advances in Neural Information Processing Systems Vol. 27 (eds Ghahramani, Z. et al.) 3104–3112 (Curran Associates, 2014) 
-
-12. Bottou, L. From machine learning to machine reasoning.
-Mach. Learn. 94, 133–149 (2014) 
-
-13. Graves, A., Wayne, G. & Danihelka, I. 
-Neural Turing machines.
-Preprint at http://arxiv.org/abs/1410.5401 (2014) 
-
-14. Bahdanau, D., Cho, K. & Bengio, Y.
-Neural machine translation by jointly learning to align and translate.
-Preprint at http://arxiv.org/abs/1409.0473 (2014)  
-
-15. Lake, B. M., Salakhutdinov, R. & Tenenbaum, J. B. 
-Human-level concept learning through probabilistic program induction.
-Science 350, 1332–1338 (2015) 
-
-16. Rezende, D. J., Mohamed, S., Danihelka, I., Gregor, K. & Wierstra, D.  
-One-shot generalization in deep generative models. 
-In Proc. 33nd International Conference on Machine Learning (eds Balcan, M. F. & Weinberger, K. Q.) 1521–1529 (JMLR, 2016) 
-
-17. Daumé, H. III, Langford, J. & Marcu, D. Search-based structured prediction.
-Mach. Learn. 75, 297–325 (2009) 
-
-
-  [1]: 
-
 
   [1]: images/2016-11-08-11-Firefox_Screenshot_2016-11-08T08-11-35.482Z.png "Firefox_Screenshot_2016-11-08T08-11-35.482Z.png"
+  [2]: images/2016-11-13-23-QQ%E5%9B%BE%E7%89%8720161113154734.png "QQ图片20161113154734.png"
