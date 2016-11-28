@@ -1,4 +1,4 @@
-##Research on health data visualization##
+##Research on TensorFlow##
 by 李孟珂
 
 ---
@@ -35,13 +35,44 @@ matrix2 = tf.constant([[2.], [2.]])   //另一个op，为2×1矩阵
 product = tf.matmul(matrix1, matrix2) //创建一个矩阵乘法op，把matrix1和matrix2作为输入，返回值product为结果
 ```
 现在已经建立好了一个图，其中有两个constant() op, 一个 matmul() op.
-
 4. 在Session中启动图
 
-第一步创建一个Session对象
 ```
+sess = tf.Session()               // 第一步创建一个Session对象
+result = sess.run(product)        // 调用run来执行三个op
+print result                      // 返回numpy'ndarrya'对象
+
+sess.close()                      // 任务完成，关闭会话，释放资源
+```
+5. Tensor
+
+用tensor数据结构来代表所有的数据，在Graph中，所有传递的数据都是tensor
+
+6. 变量
 
 ```
+state = tf.Variable(0, name="counter")  // 创建一个变量，初始化为0
+one = tf.constant(1)                    // 创建一个op，目的是让state加1
+new_value = tf.add(state, one)
+update = tf.assign(state, new_value)
+
+init_op = tf.initialize_all_variables() // 启动图后，变量必须先经过init op来初始化
+with tf.Seesion() as sess:
+    sess.run(init_op)
+    print sess.run(state)
+    for _ in range(3):
+        sess.run(update)
+        print sess.run(state)
+```
+7. Fetch
+
+用于取回op的输出内容
+
+8. Feed
+
+feed使用一个tesnor值临时替换一个op的输出结果，可以提供feed数据作为run()调用的参数
+feed只在调用它的方法内有效，方法结束就会消失
+
 ---
 #### TensorBoard
 1. 可视化TensorFlow中的数据流，以及训练过程中accuracy、bias等变化的动态图
@@ -53,4 +84,7 @@ tag：
 图形graph：tensor张量和op操作通过边连接起来构成的图形，直观展示代码中构成的图形的连接关系
 
 2. 代码
+
+---
+#### 数据可视化
 
